@@ -1,0 +1,43 @@
+### Project Description:
+
+This project involves the creation, verification, and consistency checking of Merkle trees, a cryptographic mechanism used to ensure data integrity and immutability. The three main programs are:
+
+1. **Buildmtree.py:**
+   - **Purpose:** Constructs a Merkle tree from a list of data items (e.g., names). The items are hashed to create leaf nodes, and parent nodes are derived by hashing concatenated pairs of child nodes. This tree structure allows for efficient and secure verification of data integrity and immutability. The resulting tree is saved in a file named `merkle.tree`.
+
+2. **Checkinclusion.py:**
+   - **Purpose:** Verifies whether a specific data item (e.g., a name) is present in the generated Merkle tree. It parses the `merkle.tree` file, hashes the input item, and calculates the minimal path required to prove the item's presence, demonstrating the integrity of the data within the tree.
+
+3. **Checkconsistency.py:**
+   - **Purpose:** Ensures the consistency of data between two sets of items (an old set and a new set). It checks that the new data items are added to the existing set without rearranging or altering the original data. The program calculates the minimal path from the old root to the new root, verifying that the tree maintains its integrity and immutability as new data is added.
+
+### How to Execute the Project:
+
+1. **Prerequisites:**
+   - Ensure Python is installed on your system.
+   - No additional libraries are required as the project uses built-in Python libraries.
+
+2. **Running the Programs:**
+
+   - **Step 1: Build the Merkle Tree**
+     - Run the `Buildmtree.py` program. This will prompt you to input a list of data items (e.g., names). The Merkle tree will be constructed and saved in a file called `merkle.tree`.
+     - **Instruction:** 
+       - "Run the `Buildmtree.py` program and input your data items when prompted."
+
+   - **Step 2: Check Inclusion of an Item**
+     - Run the `Checkinclusion.py` program. Input the data item you want to check for inclusion in the Merkle tree. The program will indicate whether the item is present and provide the minimal path to the root node if it is.
+     - **Instruction:** 
+       - "Run the `Checkinclusion.py` program and enter the data item you wish to search for."
+
+   - **Step 3: Check Consistency Between Two Sets**
+     - Run the `Checkconsistency.py` program. Provide two sets of data items (old and new). The program will verify if the new set consistently extends the old set and will show the minimal path from the old root to the new root.
+     - **Instruction:** 
+       - "Run the `Checkconsistency.py` program and input the old and new sets of data items when prompted."
+
+3. **Output:**
+   - The results, such as the generated Merkle tree and consistency checks, will be displayed in the console and/or saved in respective files as specified within each program.
+
+4. **Example Scenario:**
+   - After running `Buildmtree.py` with a list of names, the Merkle tree is created and saved. Using `Checkinclusion.py`, you can confirm if a specific name is part of that tree and obtain the minimal proof path. Finally, `Checkconsistency.py` can be used to ensure that adding new names to the original list maintains the integrity and immutability of the data.
+
+This project illustrates the use of Merkle trees for maintaining data integrity and immutability, which are crucial for secure and reliable data management.
